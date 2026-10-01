@@ -4,78 +4,107 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="author" content="강승민" />
-    <meta name="keywords" content="포트폴리오, 소프트웨어 개발자, 강승민" />
-    <meta name="description" content="소프트웨어 개발자 강승민의 포트폴리오 웹사이트" />
     <title>소프트웨어 개발자 강승민 포트폴리오</title>
-    <link rel="preconnect" href="https://fonts.gstatic.com" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Mukta:wght@300;500;800&display=swap" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500&display=swap" />
+    <!-- 구글 폰트 적용으로 한글 가독성 향상 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" />
-    <link rel="stylesheet" href="css/style.css" />
-    <link rel="stylesheet" href="css/theme.css" />
-    <link rel="stylesheet" href="css/theme-dark.css" media="(prefers-color-scheme: dark)">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.2/css/bootstrap.min.css" />
+    <style>
+      body {
+        font-family: 'Noto Sans KR', sans-serif;
+        color: #333;
+        line-height: 1.7;
+        background-color: #f8fafc;
+      }
+      header {
+        background: linear-gradient(135deg, #0f172a, #1e293b);
+        color: white;
+        padding: 50px 0;
+        text-align: center;
+      }
+      .section-title {
+        font-weight: 700;
+        color: #0f172a;
+        margin-bottom: 10px;
+        position: relative;
+        padding-bottom: 10px;
+      }
+      .section-title::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 50px;
+        height: 3px;
+        background-color: #2563eb;
+      }
+      .card {
+        border: none;
+        border-radius: 12px;
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        transition: transform 0.2s;
+      }
+      .card:hover {
+        transform: translateY(-3px);
+      }
+      .table th, .table td {
+        vertical-align: middle;
+        padding: 18px;
+      }
+      .badge {
+        font-weight: 400;
+        padding: 6px 10px;
+        margin: 2px;
+        font-size: 0.85rem;
+      }
+    </style>
   </head>
   <body>
     <!-- Header 시작 -->
     <header>
       <div class="container">
-        <h1>소프트웨어 개발자 <strong>강승민</strong> 입니다</h1>
+        <h1 class="fw-bold">소프트웨어 개발자 <strong>강승민</strong></h1>
+        <p class="text-muted mt-2" style="color: #94a3b8 !important;">끊임없이 성장하고 몰입하는 개발자 포트폴리오</p>
       </div>
     </header>
     <!-- Header 끝 -->
+
     <!-- Navbar 시작 -->
-    <nav class="navbar navbar-expand-lg navbar-light">
-      <div class="container-fluid text-uppercase">
-        <a class="navbar-brand" href="#">KANG SEUNG MIN</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top shadow-sm">
+      <div class="container">
+        <a class="navbar-brand fw-bold" href="#">KANG SEUNG MIN</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
           <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse sticky-fixed" id="navbarNav">
-          <ul class="navbar-nav me-auto">
-            <li class="nav-item">
-              <a class="nav-link" href="#summary">Summary</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#project">Project</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#awards">Awards</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#stacks">Stacks</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#education">Education</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#contact">Contact</a>
-            </li>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item"><a class="nav-link" href="#summary">Summary</a></li>
+            <li class="nav-item"><a class="nav-link" href="#project">Project</a></li>
+            <li class="nav-item"><a class="nav-link" href="#awards">Awards</a></li>
+            <li class="nav-item"><a class="nav-link" href="#stacks">Stacks</a></li>
+            <li class="nav-item"><a class="nav-link" href="#education">Education</a></li>
+            <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
           </ul>
-          <form class="d-flex">
-            <button type="button" data-use-dark-mode="true" class="btn btn-dark btn-toggle me-2">
-              Dark
-            </button>
-            <button type="button" data-use-dark-mode="false" class="btn btn-light btn-toggle border">
-              White
-            </button>
-          </form>
         </div>
       </div>
     </nav>
     <!-- Navbar 끝 -->
+
     <!-- Main 시작 -->
-    <main>
+    <main class="container my-5">
+      
       <!-- Summary 시작 -->
-      <section class="container pt mt" id="summary">
+      <section class="py-4" id="summary">
         <div class="row">
           <div class="col-lg-8 mx-auto text-center">
-            <h2 class="section-header fonsiz-xxxl fonwei-en-xxl letsp-sm text-upper color-basic">Summary</h2>
-            <p class="color-basic fonsiz-xl fonwei-kr-xs letsp-xs ws-sm mt-4">
-              안녕하세요. 경복대학교 소프트웨어융합과 전공 개발자 <span class="fonwei-en-xl letsp-md">강승민</span>입니다.<br>
+            <h2 class="section-title h3">Summary</h2>
+            <p class="text-secondary fs-5 mt-4" style="line-height: 1.8;">
+              안녕하세요. 경복대학교 소프트웨어융합과 전공 개발자 <strong class="text-dark">강승민</strong>입니다.<br>
               새로운 기술을 배우고 무언가를 만들어내는 것에 열정을 가지고 있으며, 
-              대학 생활 동안 다양한 팀 프로젝트와 대회 출전을 통해 실무 역량을 쌓아왔습니다.
+              대학 생활 동안 다양한 팀 프로젝트와 대회 출전을 통해 실무 역량을 탄탄히 쌓아왔습니다.
             </p>
           </div>
         </div>
@@ -83,57 +112,57 @@
       <!-- Summary 끝 -->
       
       <!-- Project 시작 -->
-      <section class="container pt mt" id="project">
-        <h2 class="section-header fonsiz-xxxl fonwei-en-xxl letsp-sm text-upper color-basic">Project</h2>
-        <div class="section-desc fonsiz-sm color-basic-opac letsp-sm ws-xs mt-2 mb-4">
-          대학 내에서 진행했던 주요 팀 프로젝트 경험입니다.
+      <section class="py-4 mt-4" id="project">
+        <div class="text-center mb-4">
+          <h2 class="section-title h3">Project</h2>
+          <p class="text-muted">대학 내에서 진행했던 주요 팀 프로젝트 경험입니다.</p>
         </div>
-        <div class="card shadow">
+        <div class="card p-3">
           <div class="card-body">
             <div class="table-responsive">
-              <table class="table borderless table-hover align-middle">
-                <thead class="border-0 borderless">
-                  <tr class="fonsiz-sm fonwei-kr-md letsp-sm color-basic-opac text-center vertmid">
-                    <th>프로젝트</th>
-                    <th>소개</th>
-                    <th>사용 기술</th>
+              <table class="table table-hover">
+                <thead class="table-light text-center">
+                  <tr>
+                    <th style="width: 20%;">프로젝트</th>
+                    <th style="width: 55%;">상세 설명</th>
+                    <th style="width: 25%;">사용 기술</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr>
-                    <th class="table-title" scope="col">TravelLens</th>
+                    <td class="fw-bold text-primary text-center">TravelLens</td>
                     <td>
-                      <div><strong>AR 기반 실시간 외국어 번역 및 맞춤 퀵 메뉴 서비스</strong></div>
-                      <div>카메라로 외국어에 가져다 대면 AR로 실시간 번역 후, 위치에 따라 퀵 메뉴로 빠른 질문 및 상대방 말의 번역 후 답변을 추천해주는 서비스 (식당, 공항, 지하철, 관광지 등)</div>
+                      <div class="fw-bold mb-1">AR 기반 실시간 외국어 번역 및 맞춤 퀵 메뉴 서비스</div>
+                      <div class="text-muted small">카메라로 외국어에 가져다 대면 AR로 실시간 번역 후, 위치에 따라 퀵 메뉴로 빠른 질문 및 상대방 말의 번역 후 답변을 추천해주는 서비스 (식당, 공항, 지하철, 관광지 등)</div>
                     </td>
                     <td class="text-center">
-                      <span class="badge bg-grey">Android Studio</span>
-                      <span class="badge bg-grey">Unity Engine</span>
-                      <span class="badge bg-grey">AR</span>
+                      <span class="badge bg-secondary">Android Studio</span>
+                      <span class="badge bg-secondary">Unity Engine</span>
+                      <span class="badge bg-secondary">AR</span>
                     </td>
                   </tr>
                   <tr>
-                    <th class="table-title" scope="col">나만의 가계부</th>
+                    <td class="fw-bold text-primary text-center">나만의 가계부</td>
                     <td>
-                      <div><strong>안드로이드 네이티브 가계부 앱</strong></div>
-                      <div>Android 최신 보안 권한 및 Room DB를 활용하여 자동 결제 수신, 실시간 UX 포맷터, 자산 및 예산 통계를 제공하는 네이티브 가계부 앱 개발</div>
+                      <div class="fw-bold mb-1">안드로이드 네이티브 가계부 앱</div>
+                      <div class="text-muted small">Android 최신 보안 권한 및 Room DB를 활용하여 자동 결제 수신, 실시간 UX 포맷터, 자산 및 예산 통계를 제공하는 네이티브 가계부 앱 개발</div>
                     </td>
                     <td class="text-center">
-                      <span class="badge bg-grey">Android Studio</span>
-                      <span class="badge bg-grey">Room DB</span>
-                      <span class="badge bg-grey">Java/Kotlin</span>
+                      <span class="badge bg-secondary">Android Studio</span>
+                      <span class="badge bg-secondary">Room DB</span>
+                      <span class="badge bg-secondary">Java/Kotlin</span>
                     </td>
                   </tr>
                   <tr>
-                    <th class="table-title" scope="col">전자담배 리뷰 사이트</th>
+                    <td class="fw-bold text-primary text-center">전자담배 리뷰 사이트</td>
                     <td>
-                      <div><strong>전자담배 정보 및 추천 웹 플랫폼</strong></div>
-                      <div>Java 이클립스 프로그램을 활용하여 각종 전자담배 리뷰를 편하게 보고 무엇을 구입할지 추천 및 안내해주는 웹 홈페이지</div>
+                      <div class="fw-bold mb-1">전자담배 정보 및 추천 웹 플랫폼</div>
+                      <div class="text-muted small">Java 이클립스 프로그램을 활용하여 각종 전자담배 리뷰를 편하게 보고 무엇을 구입할지 추천 및 안내해주는 웹 홈페이지</div>
                     </td>
                     <td class="text-center">
-                      <span class="badge bg-grey">Eclipse</span>
-                      <span class="badge bg-grey">Java</span>
-                      <span class="badge bg-grey">MySQL</span>
+                      <span class="badge bg-secondary">Eclipse</span>
+                      <span class="badge bg-secondary">Java</span>
+                      <span class="badge bg-secondary">MySQL</span>
                     </td>
                   </tr>
                 </tbody>
@@ -145,17 +174,17 @@
       <!-- Project 끝 -->
 
       <!-- Awards 시작 -->
-      <section class="container pt mt" id="awards">
-        <h2 class="section-header fonsiz-xxxl fonwei-en-xxl letsp-sm text-upper color-basic">Awards</h2>
-        <div class="section-desc fonsiz-sm color-basic-opac letsp-sm ws-xs mt-2 mb-4">
-          대회 및 수상 내역입니다.
+      <section class="py-4 mt-4" id="awards">
+        <div class="text-center mb-4">
+          <h2 class="section-title h3">Awards</h2>
+          <p class="text-muted">대회 및 수상 내역입니다.</p>
         </div>
-        <div class="card shadow">
+        <div class="card p-3">
           <div class="card-body">
             <div class="table-responsive">
-              <table class="table table-hover align-middle">
-                <thead>
-                  <tr class="fonsiz-sm fonwei-kr-md letsp-sm color-basic-opac text-center vertmid">
+              <table class="table table-hover">
+                <thead class="table-light text-center">
+                  <tr>
                     <th>대회명</th>
                     <th>세부 내용</th>
                     <th>수상 결과</th>
@@ -163,12 +192,12 @@
                 </thead>
                 <tbody>
                   <tr>
-                    <th class="table-title" scope="col">2022 창업 경진대회</th>
+                    <td class="fw-bold text-center">2022 창업 경진대회</td>
                     <td>
-                      <div><strong>창업 경진대회 아이디어 및 서비스 구현 출품</strong></div>
-                      <div>창의적인 아이디어를 바탕으로 한 서비스 개발 및 발표 진행</div>
+                      <div class="fw-bold mb-1">창업 경진대회 아이디어 및 서비스 구현 출품</div>
+                      <div class="text-muted small">창의적인 아이디어를 바탕으로 한 서비스 개발 및 발표 진행</div>
                     </td>
-                    <td class="fonsiz-md letsp-sm fonwei-kr-md text-center color-basic-opac text-primary"><strong>동상</strong></td>
+                    <td class="text-center text-primary fw-bold fs-5">동상</td>
                   </tr>
                 </tbody>
               </table>
@@ -179,44 +208,44 @@
       <!-- Awards 끝 -->
 
       <!-- Stacks 시작 -->
-      <section class="container pt mt mb-5" id="stacks">
-        <h2 class="section-header fonsiz-xxxl fonwei-en-xxl letsp-sm text-upper color-basic">Stacks</h2>
-        <div class="section-desc fonsiz-sm color-basic-opac letsp-sm ws-xs mt-2 mb-4">
-          학습하고 활용해 온 주요 기술 스택입니다.
+      <section class="py-4 mt-4" id="stacks">
+        <div class="text-center mb-4">
+          <h2 class="section-title h3">Stacks</h2>
+          <p class="text-muted">학습하고 활용해 온 주요 기술 스택입니다.</p>
         </div>
-        <div class="card shadow">
+        <div class="card p-3">
           <div class="card-body">
             <div class="table-responsive">
-              <table class="table table-hover align-middle">
-                <thead>
-                  <tr class="fonsiz-sm fonwei-kr-md letsp-sm color-basic-opac text-center vertmid">
-                    <th>기술 구분</th>
-                    <th>활용 수준 및 설명</th>
+              <table class="table table-hover">
+                <thead class="table-light text-center">
+                  <tr>
+                    <th style="width: 30%;">기술 구분</th>
+                    <th style="width: 70%;">활용 수준 및 설명</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr>
-                    <th scope="col" class="table-title letsp-md">Android Studio</th>
+                    <td class="fw-bold text-center">Android Studio</td>
                     <td>안드로이드 앱 개발 환경으로 UI 구성 및 네이티브 기능 구현에 능숙합니다.</td>
                   </tr>
                   <tr>
-                    <th scope="col" class="table-title letsp-md">Linux</th>
+                    <td class="fw-bold text-center">Linux</td>
                     <td>서버 환경 구축 및 기본적인 명령어 활용이 가능합니다.</td>
                   </tr>
                   <tr>
-                    <th scope="col" class="table-title letsp-md">Eclipse</th>
+                    <td class="fw-bold text-center">Eclipse</td>
                     <td>Java 기반 프로젝트 및 웹 애플리케이션 개발에 활용합니다.</td>
                   </tr>
                   <tr>
-                    <th scope="col" class="table-title letsp-md">Unity Engine</th>
+                    <td class="fw-bold text-center">Unity Engine</td>
                     <td>AR 및 게임 콘텐츠 구현을 위한 엔진 활용 능력을 보유하고 있습니다.</td>
                   </tr>
                   <tr>
-                    <th scope="col" class="table-title letsp-md">Visual Studio</th>
+                    <td class="fw-bold text-center">Visual Studio</td>
                     <td>다양한 언어 환경에서 프로그램 개발 및 디버깅에 활용합니다.</td>
                   </tr>
                   <tr>
-                    <th scope="col" class="table-title letsp-md">MySQL</th>
+                    <td class="fw-bold text-center">MySQL</td>
                     <td>데이터베이스 설계 및 쿼리 작성, 연동 작업을 수행할 수 있습니다.</td>
                   </tr>
                 </tbody>
@@ -228,19 +257,20 @@
       <!-- Stacks 끝 -->
 
       <!-- Education 시작 -->
-      <section class="container pt mt" id="education">
-        <h2 class="section-header fonsiz-xxxl fonwei-en-xxl letsp-sm text-upper color-basic">Education</h2>
-        <div class="section-desc fonsiz-sm color-basic-opac letsp-sm ws-xs mt-2 mb-4">
-          학력 사항
+      <section class="py-4 mt-4" id="education">
+        <div class="text-center mb-4">
+          <h2 class="section-title h3">Education</h2>
+          <p class="text-muted">학력 사항</p>
         </div>
         <div class="row justify-content-center">
-          <div class="col-sm-12 col-lg-8">
-            <div class="card mb-3 text-center p-4 shadow">
+          <div class="col-md-6">
+            <div class="card text-center p-4">
               <div class="card-body">
-                <h5 class="card-title fonsiz-xxxl fonwei-kr-xl letsp-sm mb-3">경복대학교</h5>
-                <p class="card-text fonsiz-lg fonwei-kr-sm color-basic-opac letsp-sm">
-                  소프트웨어융합과 전공
-                </p>
+                <div class="text-primary mb-2" style="font-size: 2.5rem;">
+                  <i class="bi bi-mortarboard-fill"></i>
+                </div>
+                <h3 class="fw-bold h4 mb-2">경복대학교</h3>
+                <p class="text-muted m-0">소프트웨어융합과 전공</p>
               </div>
             </div>
           </div>
@@ -249,51 +279,40 @@
       <!-- Education 끝 -->
 
       <!-- Contact 시작 -->
-      <section class="container pt mt" id="contact">
+      <section class="py-4 mt-4" id="contact">
         <div class="row">
-          <div class="col-lg-7 mx-auto text-center mb-5">
-            <h2 class="section-header fonsiz-xxxl fonwei-en-xxl letsp-sm text-upper color-basic">
-              Contact
-            </h2>
-            <p class=" fonsiz-sm color-basic fonsiz-xl fonwei-kr-xs lh-md letsp-xs ws-sm my-4">
+          <div class="col-lg-7 mx-auto text-center mb-4">
+            <h2 class="section-title h3">Contact</h2>
+            <p class="text-secondary fs-5 mt-3">
               끝까지 읽어 주셔서 감사합니다. <br/>
               끊임없이 발전하는 개발자가 되겠습니다.
             </p>
           </div>
         </div>
-      </section>
-      <section class="container backimg mb-5">
-        <div class="name-card d-flex justify-content-center align-items-center h-100">
-          <div class="contact-body shadow text-center p-4" style="width: 100%; max-width: 600px; margin: 0 auto;">
-            <div class="mb-4">
-              <h1 class="fonsiz-xxl">강승민</h1>
-              <small class="text-muted">Software Developer</small>
+        <div class="row justify-content-center">
+          <div class="col-md-8 col-lg-6">
+            <div class="card p-4 text-center">
+              <div class="mb-3">
+                <h3 class="fw-bold h4 mb-1">강승민</h3>
+                <span class="text-muted small">Software Developer</span>
+              </div>
+              <hr class="my-3">
+              <ul class="list-unstyled text-start mx-auto" style="width: fit-content; line-height: 2;">
+                <li><i class="bi bi-person-check-fill text-primary me-2"></i> Position : <strong>Software Developer</strong></li>
+                <li><i class="bi bi-envelope text-primary me-2"></i> Email : <a href="mailto:tmdals9432@gmail.com" class="text-decoration-none text-dark"><strong>tmdals9432@gmail.com</strong></a></li>
+                <li><i class="bi bi-telephone-inbound text-primary me-2"></i> Phone : <a href="tel:010-5435-9432" class="text-decoration-none text-dark"><strong>010-5435-9432</strong></a></li>
+                <li><i class="bi bi-house-door text-primary me-2"></i> GitHub : <a href="https://github.com/tmdals9432" target="_blank" class="text-decoration-none text-dark"><strong>github.com/tmdals9432</strong></a></li>
+              </ul>
             </div>
-            <hr>
-            <ul class="list-unstyled text-start d-inline-block mx-auto" style="padding-left: 20px;">
-              <li class="mb-2">
-                <i class="bi bi-person-check-fill"></i> Position : <strong>Software Developer</strong>
-              </li>
-              <li class="mb-2">
-                <i class="bi bi-envelope"></i> Email : <a href="mailto:tmdals9432@gmail.com"><strong>tmdals9432@gmail.com</strong></a>
-              </li>
-              <li class="mb-2">
-                <i class="bi bi-telephone-inbound"></i> Phone : <a href="tel:010-5435-9432"><strong>010-5435-9432</strong></a>
-              </li>
-              <li>
-                <i class="bi bi-house-door"></i> GitHub : <a href="https://github.com/tmdals9432" target="_blank"><strong>github.com/tmdals9432</strong></a>
-              </li>
-            </ul>
           </div>
         </div>
       </section>
       <!-- Contact 끝 -->
+
     </main>
     <!-- Main 끝 -->
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.min.js"></script>
-    <script src="js/script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.2/js/bootstrap.bundle.min.js"></script>
   </body>
 </html>
